@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<script type="text/x-red" data-template-name="max31865">
+    <div class="form-row">
+        <label for="node-input-bus"><i class="fa fa-tag"></i> Bus</label>
+        <input type="text" id="node-input-bus" placeholder="Bus"/>
+    </div>
+    <div class="form-tips"><b>Tip:</b> First digit in /dev/spidev0.0</div>
+
+    <div class="form-row">
+        <label for="node-input-dev"><i class="fa fa-tag"></i> Device</label>
+        <input type="text" id="node-input-dev" placeholder="Device"/>
+    </div>
+    <div class="form-tips"><b>Tip:</b> Second digit in /dev/spidev0.0</div>
+
+    <div class="form-row">
+        <label for="node-input-rtd"><i class="fa fa-toggle-on"></i> RTD Nominal</label>
+        <select type="text" id="node-input-rtd" style="width:150px;">
+          <option value=100>100</option>
+          <option value=1000>1000</option>
+        </select>
+    </div>
+    <div class="form-tips"><b>Tip:</b> Nominal resistance of sensor</div>
+
+    <div class="form-row">
+        <label for="node-input-ref"><i class="fa fa-toggle-on"></i> Reference Resistance</label>
+        <select type="text" id="node-input-ref" style="width:150px;">
+          <option value=430>430</option>
+          <option value=4300>4300</option>
+        </select>
+    </div>
+    <div class="form-tips"><b>Tip:</b> Reference resistance on board</div>
+
+    <div class="form-row">
+        <label for="node-input-wires"><i class="fa fa-toggle-on"></i> Wires</label>
+        <select type="text" id="node-input-wires" style="width:150px;">
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
+    </div>
+    <div class="form-tips"><b>Tip:</b> Wires used for sensor (2, 3 or 4)</div>
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name"/>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="max31865">
+   <p>Reads from a MAX31865 RTD-to-Digital Converter board.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('max31865',{
+        category: 'Raspberry Pi',
+        paletteLabel: 'MAX31865 converter',
+        color: "#c6dbef",
+        defaults: {
+            name: {value:""},
+            bus: {value:0},
+            dev: {value:0},
+            rtd: {value:1000},
+            ref: {value:4300},
+            wires: {value:4}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "rpi.png",
+        label: function() {
+            return this.name || "max31865-"+this.bus+"/"+this.dev;
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
