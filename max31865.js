@@ -34,6 +34,7 @@ module.exports = function(RED)
         this.rtdNominal = parseInt(n.rtd || 1000);   // nominal resistance of sensor
         this.refResistor = parseInt(n.ref || 4300);  // reference resistance on board
         this.sensorWires = parseInt(n.wir || 4);     // wires used for sensor (2, 3 or 4)
+        this.name = n.name || "max31865-"+this.bus+"/"+this.device;
 
         // Configure sensor
         const sensor = new MAX31865(
@@ -55,7 +56,7 @@ module.exports = function(RED)
             .then((temperature) =>
             {
                 // Send payload
-                node.send({payload:temperature, topic:"max31865-"+this.bus+"/"+this.device});
+                node.send({payload:temperature.toFixed(2), topic:this.name});
             });
         });
     }
