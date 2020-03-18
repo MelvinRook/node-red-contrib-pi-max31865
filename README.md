@@ -35,7 +35,7 @@ More details on the Raspberry Pi pinout: https://pinout.xyz/pinout/spi
 
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm install node-red-node-pi-max31865
+        npm install node-red-contrib-pi-max31865
 
 ## Usage
 
