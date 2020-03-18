@@ -1,0 +1,24 @@
+{
+    "name"          : "node-red-node-pi-max31865",
+    "version"       : "0.9.1",
+    "description"   : "A Node-RED node to read from the MAX31865 RTD-to-Digital Converter",
+    "dependencies"  : {
+        "mcp-spi-adc": "^2.0.6"
+    },
+    "repository" : {
+        "type":"git",
+        "url":"https://github.com/node-red/node-red-nodes/tree/master/hardware"
+    },
+    "license": "MIT-License",
+    "keywords": [ "node-red", "pi", "rtd", "max31865" ],
+    "node-red"      : {
+        "nodes"     : {
+            "max31865": "max31865.js"
+        }
+    },
+    "author": {
+        "name": "Melvin Rook",
+        "email": "melvin@techflection.nl",
+        "url": "https://github.com/melvinrook"
+    }
+}
