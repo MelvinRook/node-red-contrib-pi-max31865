@@ -1,18 +1,24 @@
 {
-    "name"          : "node-red-node-pi-max31865",
-    "version"       : "0.9.1",
-    "description"   : "A Node-RED node to read from the MAX31865 RTD-to-Digital Converter",
-    "dependencies"  : {
+    "name": "node-red-node-pi-max31865",
+    "version": "0.9.1",
+    "description": "A Node-RED node to read from the MAX31865 RTD-to-Digital Converter",
+    "dependencies": {
+        "max31865": "^1.0.3",
         "mcp-spi-adc": "^2.0.6"
     },
-    "repository" : {
-        "type":"git",
-        "url":"https://github.com/node-red/node-red-nodes/tree/master/hardware"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/node-red-nodes/tree/master/hardware"
     },
     "license": "MIT-License",
-    "keywords": [ "node-red", "pi", "rtd", "max31865" ],
-    "node-red"      : {
-        "nodes"     : {
+    "keywords": [
+        "node-red",
+        "pi",
+        "rtd",
+        "max31865"
+    ],
+    "node-red": {
+        "nodes": {
             "max31865": "max31865.js"
         }
     },
