@@ -33,7 +33,7 @@ module.exports = function(RED)
         this.device = parseInt(n.dev || 0);          // device - second digit in /dev/spidev0.0
         this.rtdNominal = parseInt(n.rtd || 1000);   // nominal resistance of sensor
         this.refResistor = parseInt(n.ref || 4300);  // reference resistance on board
-        this.wires = parseInt(n.wires || 4);         // wires used for sensor (2, 3 or 4)
+        this.sensorWires = parseInt(n.wir || 4);     // wires used for sensor (2, 3 or 4)
 
         // Configure sensor
         const sensor = new MAX31865(
@@ -42,7 +42,7 @@ module.exports = function(RED)
             {
               rtdNominal: this.rtdNominal,
               refResistor: this.refResistor,
-              wires: this.wires,
+              wires: this.sensorWires,
             }
         );
 
