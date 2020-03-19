@@ -51,12 +51,14 @@ module.exports = function(RED)
         sensor.init()
         .then(() =>
         {
-            // Get temperature from sensor
-            sensor.getTemperature()
-            .then((temperature) =>
-            {
-                // Send payload
-                node.send({payload:temperature.toFixed(2), topic:this.name});
+            node.on("input", function(msg) {
+                // Get temperature from sensor
+                sensor.getTemperature()
+                .then((temperature) =>
+                {
+                    // Send payload
+                    node.send({payload:temperature.toFixed(2), topic:this.name});
+                });
             });
         });
     }
