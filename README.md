@@ -9,7 +9,7 @@ The node will appear as `MAX38165 Converter` in the menu, listed in the `Raspber
 
 ## Pre-requisites
 
-1. Ensure to enable SPI:
+1. Ensure to enable SPI on your Raspberry Pi:
 
  - Run `sudo raspi-config`
  - Select `5 - Interfacing Options`
@@ -39,7 +39,7 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 
 ## Usage
 
-Find the node `MAX38165 Converter` in the menu and add it to your workflow. The configuration will lead itself:
+Find the node `MAX38165 Converter` in the menu and add it to your workflow. The configuration speaks for itself:
 
  - bus - first digit in /dev/spidev0.0
  - device - second digit in /dev/spidev0.0
@@ -48,4 +48,4 @@ Find the node `MAX38165 Converter` in the menu and add it to your workflow. The 
  - wires used for sensor (2, 3 or 4)
  - name to set a custom name
 
-Connect a debug node to quickly assess that everything is working. The output will appear in the debug panel.
+Connect a debug node to quickly assess that everything is working. The output will appear in the debug panel. Use a timestamp `inject` node as input to trigger readings on a regular interval. Use `node-red-dashboard` nodes for visualization, i.e. use `ui_chart` to plot data points on a graph.
