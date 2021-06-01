@@ -1,8 +1,6 @@
 node-red-node-pi-max31865
 ========================
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/MelvinRook)
-
 A <a href="https://nodered.org" target="_new">Node-RED</a> node to read from the <a href="https://learn.adafruit.com/adafruit-max31865-rtd-pt100-amplifier" target="_new">Adafruit MAX31865 board</a>, which can be connected to the PT100 and PT1000 Resistance Temperature Detectors (RTDs).
 
 The node will appear as `MAX38165 Converter` in the menu, listed in the `Raspberry Pi` category.
